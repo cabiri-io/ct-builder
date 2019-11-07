@@ -21,7 +21,7 @@ jobs:
         run: docker tag cabiri/ct-builder:0.19 cabiri/ct-builder:latest
 
       - name: Login to dockerhub
-        run: docker login --username ${DOCKER_USER} --password ${DOCKER_PASS}
+        run: echo ${DOCKER_PASS} | docker login --username ${DOCKER_USER} --password-stdin
         env:
           DOCKER_USER: ${{secrets.docker_username}}
           DOCKER_PASS: ${{secrets.docker_api_key}}
