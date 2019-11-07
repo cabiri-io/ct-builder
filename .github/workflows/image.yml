@@ -1,0 +1,33 @@
+name: Docker Image CI
+
+on: [push]
+
+env:
+  IMAGE_VERSION: 0.19
+
+jobs:
+    
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag cabiri/ct-builder:${IMAGE_VERSION}
+
+      - name: Latest Tag
+        run: docker tag cabiri/ct-builder:0.19 cabiri/ct-builder:latest
+
+      - name: Login to dockerhub
+        run: docker login --username ${DOCKER_USER} --password ${DOCKER_PASS}
+        env:
+          DOCKER_USER: ${{secrets.docker_username}}
+          DOCKER_PASS: ${{secrets.docker_api_key}}
+
+      - name: Publish Versioned Image
+        run: docker push cabiri/ct-builder:${IMAGE_VERSION}
+
+      - name: Publish Latest Image
+        run: docker push cabiri/ct-builder:latest
