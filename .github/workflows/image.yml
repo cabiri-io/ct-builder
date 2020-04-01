@@ -16,7 +16,7 @@ jobs:
         run: docker build . --file Dockerfile --tag cabiri/ct-builder:${IMAGE_VERSION}
 
       - name: Latest Tag
-        run: docker tag cabiri/ct-builder:0.19 cabiri/ct-builder:latest
+        run: docker tag cabiri/ct-builder:${IMAGE_VERSION} cabiri/ct-builder:latest
 
       - name: Login to dockerhub
         run: echo ${DOCKER_PASS} | docker login --username ${DOCKER_USER} --password-stdin
