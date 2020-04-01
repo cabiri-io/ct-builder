@@ -1,7 +1,7 @@
-FROM hashicorp/terraform
+FROM hashicorp/terraform:0.12.20
 
 # use ARGS
-ENV CT_VERSION 0.19.0
+ENV CT_VERSION 0.21.0
 
 RUN wget https://github.com/labd/terraform-provider-commercetools/releases/download/${CT_VERSION}/terraform-provider-commercetools-${CT_VERSION}-linux-amd64.tar.gz; \
     tar -xzvf terraform-provider-commercetools-${CT_VERSION}-linux-amd64.tar.gz; \
