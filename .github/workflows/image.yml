@@ -3,12 +3,10 @@ name: Docker Image CI
 on: [push]
 
 env:
-  IMAGE_VERSION: 0.19
+  IMAGE_VERSION: 0.21
 
 jobs:
-    
   build:
-
     runs-on: ubuntu-latest
 
     steps:
