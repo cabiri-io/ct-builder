@@ -1,4 +1,4 @@
-FROM hashicorp/terraform:0.12.20
+FROM hashicorp/terraform:0.12.24
 
 # use ARGS
 ENV CT_VERSION 0.21.0

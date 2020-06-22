@@ -3,7 +3,7 @@ name: Docker Image CI
 on: [push]
 
 env:
-  IMAGE_VERSION: 0.21
+  IMAGE_VERSION: 0.22
 
 jobs:
   build:
