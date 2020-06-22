@@ -9,7 +9,7 @@ A terraform docker image with preinstalled commercetools terraform provider.
 | 0.21    | 0.12.20           | 0.21.0                |
 | 0.22    | 0.12.24           | 0.21.0                |
 
-## Example
+## Example
 
 An example of running plan on the resources:
 

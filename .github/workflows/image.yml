@@ -1,7 +1,9 @@
 name: Docker Image CI
 
-on: [push]
-
+on:
+  push:
+    paths-ignore:
+      - '**.md'
 env:
   IMAGE_VERSION: 0.22
 
