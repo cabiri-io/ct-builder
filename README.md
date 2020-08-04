@@ -8,6 +8,7 @@ A terraform docker image with preinstalled commercetools terraform provider.
 | ------- | ----------------- | --------------------- |
 | 0.21    | 0.12.20           | 0.21.0                |
 | 0.22    | 0.12.24           | 0.21.0                |
+| 0.23    | 0.12.29           | 0.21.1                |
 
 ## Example
 
@@ -24,6 +25,6 @@ docker run \
     --rm \
     -i \
     -v $(pwd):/config \
-    cabiri/ct-builder:0.22 \
+    cabiri/ct-builder:0.23 \
     plan
 ```
